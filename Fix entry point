@@ -1,0 +1,4 @@
+fix: correct __name__ check for program execution
+
+- Changed `_name_` to `__name__` and `_main_` to `"__main__"`.
+- Ensures the program runs only when executed directly.
