@@ -1,0 +1,66 @@
+import random
+
+# ---------------- Conversion Functions ---------------- #
+
+def decimal_to_binary(decimal_num):
+    """Convert a decimal integer to a binary string."""
+    return bin(decimal_num)[2:]  # Remove '0b' prefix
+
+def binary_to_decimal(binary_str):
+    """Convert a binary string to a decimal integer."""
+    return int(binary_str, 2)
+
+def decimal_to_hexadecimal(decimal_num):
+    """Convert a decimal integer to a hexadecimal string."""
+    return hex(decimal_num)[2:].upper()  # Remove '0x' prefix & make uppercase
+
+def hexadecimal_to_decimal(hex_str):
+    """Convert a hexadecimal string to a decimal integer."""
+    return int(hex_str, 16)
+
+# ---------------- Menu-Driven Program ---------------- #
+
+def main():
+    while True:
+        print("\nConversion Menu:")
+        print("1. Convert Decimal to Binary")
+        print("2. Convert Binary to Decimal")
+        print("3. Convert Hexadecimal to Decimal")
+        print("4. Convert Decimal to Hexadecimal")
+        print("5. Demo (Generate and convert random integers to binary)")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "1":
+            decimal_num = int(input("Enter a decimal number: "))
+            print(f"Binary representation: {decimal_to_binary(decimal_num)}")
+
+        elif choice == "2":
+            binary_str = input("Enter a binary number: ")
+            print(f"Decimal representation: {binary_to_decimal(binary_str)}")
+
+        elif choice == "3":
+            hex_str = input("Enter a hexadecimal number: ")
+            print(f"Decimal representation: {hexadecimal_to_decimal(hex_str)}")
+
+        elif choice == "4":
+            decimal_num = int(input("Enter a decimal number: "))
+            print(f"Hexadecimal representation: {decimal_to_hexadecimal(decimal_num)}")
+
+        elif choice == "5":
+            random_num = random.randint(0, 99)
+            binary_repr = decimal_to_binary(random_num)
+            print(f"Random number generated: {random_num}")
+            print(f"Binary representation: {binary_repr}")
+
+        elif choice == "6":
+            print("Exiting program. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice! Please enter a number between 1 and 6.")
+
+# ---------------- Run Program ---------------- #
+if __name__ == "__main__":
+    main()
